@@ -83,7 +83,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-0"
+      className="relative flex items-center justify-center overflow-hidden pt-10 lg:pt-10 "
       aria-labelledby="hero-heading"
     >
       {/* Background Gradient Mesh */}

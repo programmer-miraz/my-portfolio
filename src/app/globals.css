@@ -2,8 +2,16 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* Hide scrollbar but keep scrolling */
+html {
+  scrollbar-width: none;
+}
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+@custom-variant dark (&:is(.dark *));
 @theme inline {
     --font-heading: var(--font-sans);
     --font-sans: var(--font-sans);

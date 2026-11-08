@@ -291,11 +291,11 @@ export function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative w-full bg-background py-20 sm:py-24 lg:py-28"
+      className="relative w-full bg-background pt-20 sm:pt-14 lg:pt-20"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-10">
         {/* Two-column layout: text/pills on the left, orbit on the right */}
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           {/* ================= LEFT COLUMN ================= */}
           <div>
             {/* ---------- HEADING ---------- */}
@@ -363,7 +363,7 @@ export function Skills() {
                 return (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-sm text-zinc-300 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/30 hover:bg-white/10 hover:text-white animate-slide-up-fade"
+                    className="flex items-center gap-2 cursor-pointer rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-sm text-zinc-300 backdrop-blur-sm transition-all duration-300  hover:-translate-y-0.5 hover:border-blue-500/30 hover:bg-white/10 hover:text-white animate-slide-up-fade"
                     style={{ animationDelay: `${index * 35}ms` }}
                   >
                     <Icon
@@ -378,7 +378,7 @@ export function Skills() {
 
           {/* ================= RIGHT COLUMN: TWO ORBIT RINGS ================= */}
           <div
-            className={`relative mx-auto aspect-square w-full max-w-[480px] transition-all duration-1000 lg:mr-0 ${
+            className={`relative mx-auto aspect-square w-full max-w-[425px] transition-all duration-1000 lg:mr-0 ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
             style={{ transitionDelay: "300ms" }}
