@@ -247,9 +247,8 @@ export function Projects() {
         <div className="mx-auto max-w-2xl text-center">
           {/* Badge */}
           <div
-            className={`inline-flex rounded-full bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-cyan-500/60 p-[1px] transition-all duration-700 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}
+            className={`inline-flex rounded-full bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-cyan-500/60 p-[1px] transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              }`}
           >
             <div className="inline-flex items-center gap-2.5 rounded-full bg-background/90 px-4 py-2 backdrop-blur-sm sm:px-5">
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-500">
@@ -266,9 +265,8 @@ export function Projects() {
 
           {/* Heading */}
           <h2
-            className={`mt-6 text-3xl font-bold tracking-tight text-white transition-all duration-700 sm:text-4xl lg:text-5xl ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}
+            className={`mt-6 text-3xl font-bold tracking-tight text-white transition-all duration-700 sm:text-4xl lg:text-5xl ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              }`}
             style={{ transitionDelay: "100ms" }}
           >
             My{" "}
@@ -279,9 +277,8 @@ export function Projects() {
 
           {/* Short description */}
           <p
-            className={`mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 transition-all duration-700 sm:text-base ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}
+            className={`mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-zinc-400 transition-all duration-700 sm:text-base ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+              }`}
             style={{ transitionDelay: "200ms" }}
           >
             A selection of full-stack and frontend projects built with modern
@@ -290,7 +287,7 @@ export function Projects() {
         </div>
 
         {/* ================= HORIZONTAL PROJECT LIST ================= */}
-        <div className="mt-10 grid gap-4 md:auto-rows-fr lg:mt-12 lg:gap-5">
+        <div className="mt-10 grid gap-4 md:auto-rows-fr grid-cols-1 sm:grid-cols-2 lg:mt-12 lg:gap-5">
           {projects.map((project, index) => {
             const PreviewIcon = project.previewIcon;
             const projectNumber = String(index + 1).padStart(2, "0");
@@ -298,16 +295,15 @@ export function Projects() {
             return (
               <div
                 key={project.title}
-                className={`h-full transition-all duration-700 ${
-                  isVisible
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-5 opacity-0"
-                }`}
+                className={`h-full transition-all duration-700 ${isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-5 opacity-0"
+                  }`}
                 style={{ transitionDelay: `${250 + index * 90}ms` }}
               >
                 {/* Gradient border wrapper */}
                 <article className="group relative h-full overflow-hidden rounded-2xl bg-gradient-to-r from-blue-500/30 via-white/[0.07] to-purple-500/30 p-[1px] shadow-[0_12px_40px_-24px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-0.5 hover:from-blue-400/50 hover:via-cyan-400/20 hover:to-purple-400/50 hover:shadow-[0_18px_50px_-24px_rgba(59,130,246,0.4)]">
-                  <div className="relative flex h-full flex-col gap-4 rounded-[15px] bg-[#080d16]/90 p-4 backdrop-blur-sm md:flex-row md:items-center md:gap-5 md:p-5">
+                  <div className="relative  h-full flex-col gap-4 rounded-[15px] bg-[#080d16]/90 p-4 backdrop-blur-sm md:flex-row md:items-center md:gap-5 md:p-5">
                     {/* Soft glow revealed on hover */}
                     <div
                       className="pointer-events-none absolute -right-24 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-blue-500/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
@@ -315,7 +311,7 @@ export function Projects() {
                     />
 
                     {/* ---------- SMALL PREVIEW (LEFT ON DESKTOP) ---------- */}
-                    <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/[0.08] via-[#0b1220] to-purple-500/[0.08] transition-colors duration-500 group-hover:border-blue-400/20 sm:h-32 md:h-[112px] md:w-[176px]">
+                    <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/[0.08] via-[#0b1220] to-purple-500/[0.08] transition-colors duration-500 group-hover:border-blue-400/20 sm:h-32 md:h-[200px] ">
                       {project.image ? (
                         <Image
                           src={project.image}
@@ -324,39 +320,14 @@ export function Projects() {
                           sizes="(min-width: 768px) 176px, 100vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                         />
-                      ) : (
-                        // CSS-only placeholder. No external images are used.
-                        <div className="absolute inset-0" aria-hidden="true">
-                          <div
-                            className="absolute inset-0 opacity-50"
-                            style={{
-                              backgroundImage:
-                                "linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px)",
-                              backgroundSize: "24px 24px",
-                            }}
-                          />
-                          <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-2xl" />
+                      ) : (<div className="flex h-52 items-center justify-center">
+                    
+                          <span className="mb-4 inline-block rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-1 text-xs font-semibold tracking-widest text-teal-500">
+                            COMING SOON
+                          </span>
 
-                          {/* Tiny browser top bar */}
-                          <div className="absolute inset-x-3 top-2.5 flex items-center gap-1">
-                            <span className="h-1 w-1 rounded-full bg-rose-400/50" />
-                            <span className="h-1 w-1 rounded-full bg-amber-400/50" />
-                            <span className="h-1 w-1 rounded-full bg-emerald-400/50" />
-                            <span className="ml-1.5 h-1 flex-1 rounded-full bg-white/[0.06]" />
-                          </div>
-
-                          <div className="relative flex h-full flex-col items-center justify-center gap-1 pt-4">
-                            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-blue-400/20 bg-[#0b1424]/80 shadow-[0_0_18px_rgba(59,130,246,0.15)] transition-transform duration-500 group-hover:scale-105">
-                              <PreviewIcon className="h-4 w-4 text-blue-200/90" />
-                            </span>
-                            <p className="text-[10px] font-semibold tracking-tight text-zinc-300 sm:text-[11px]">
-                              {project.title}
-                            </p>
-                            <span className="text-[8px] font-medium uppercase tracking-[0.24em] text-zinc-500">
-                              Preview
-                            </span>
-                          </div>
-                        </div>
+                    
+                         </div>
                       )}
 
                       <div
@@ -368,14 +339,14 @@ export function Projects() {
                     {/* ---------- PROJECT DETAILS (MIDDLE) ---------- */}
                     <div className="relative min-w-0 flex-1">
                       <div className="flex items-center gap-2.5">
-                        <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-md border border-blue-400/20 bg-blue-500/[0.06] px-1.5 font-mono text-[10px] font-semibold tracking-[0.12em] text-blue-300/80">
+                        <span className="inline-flex h-6 mt-3 min-w-6 items-center justify-center rounded-md border border-blue-400/20 bg-blue-500/[0.06] px-1.5 font-mono text-[10px] font-semibold tracking-[0.12em] text-blue-300/80">
                           {projectNumber}
                         </span>
                         <span
-                          className="h-px w-5 bg-gradient-to-r from-blue-400/50 to-transparent"
+                          className="h-px w-5 mt-3 bg-gradient-to-r from-blue-400/50 to-transparent"
                           aria-hidden="true"
                         />
-                        <h3 className="truncate text-lg font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-blue-100 sm:text-xl">
+                        <h3 className="truncate mt-3 text-lg font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-blue-100 sm:text-xl">
                           {project.title}
                         </h3>
                       </div>
@@ -408,7 +379,7 @@ export function Projects() {
                     </div>
 
                     {/* ---------- ACTIONS (RIGHT ON DESKTOP) ---------- */}
-                    <div className="relative mt-1 grid shrink-0 grid-cols-2 gap-2 md:mt-0 md:w-[148px] md:grid-cols-1 md:border-l md:border-white/5 md:pl-5">
+                    <div className="relative mt-1 grid shrink-0 grid-cols-1 gap-3 md:mt-5 md:grid-cols-2 md:border-l md:border-white/5 md:px-2">
                       <ProjectAction
                         href={project.liveUrl}
                         label="Live Demo"
