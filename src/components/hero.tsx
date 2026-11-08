@@ -170,17 +170,17 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up-fade" style={{ animationDelay: "500ms" }}>
               <Button
-                className="group w-full sm:w-auto bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 px-8 py-3"
+                className="group w-full cursor-pointer sm:w-auto bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 px-7 py-5"
               >
                 View Projects
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Button>
               <Button
                 variant="outline"
-                className="w-full sm:w-auto border-border/50 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400 transition-all duration-300 px-8 py-3"
+                className="w-full sm:w-auto border-border/50 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400 transition-all cursor-pointer duration-300 px-8 py-5"
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               >
-                <Mail className="mr-2 h-4 w-4" aria-hidden="true" />
+                <Mail className="mr-2 h-5 w-4" aria-hidden="true" />
                 Contact Me
               </Button>
             </div>
@@ -259,13 +259,19 @@ export function Hero() {
 
             {/* Floating Tech Badges - Enhanced */}
             <div className="absolute -bottom-6 -left-6 animate-float-slow" style={{ animationDelay: "1s", animationDuration: "4s" }} aria-hidden="true">
-              <div className="bg-background/80 backdrop-blur-sm border border-blue-500/20 rounded-xl px-4 py-3 shadow-lg shadow-blue-500/10 transition-all hover:shadow-blue-500/20">
-                <Code2 className="h-6 w-6 text-blue-400" />
+              <div className="bg-background/80 backdrop-blur-sm border border-blue-500/20 rounded-xl px-4 py-3 shadow-[0_0_18px_rgba(59,130,246,0.18)] transition-all hover:shadow-[0_0_28px_rgba(59,130,246,0.32)]">
+                {/* Only the decorative icon spins, not the badge card. */}
+                <span className="animate-icon-spin" style={{ animationDuration: "10s" }}>
+                  <Code2 className="h-6 w-6 text-blue-400" />
+                </span>
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 animate-float-slow" style={{ animationDelay: "2s", animationDuration: "4.5s" }} aria-hidden="true">
-              <div className="bg-background/80 backdrop-blur-sm border border-purple-500/20 rounded-xl px-4 py-3 shadow-lg shadow-purple-500/10 transition-all hover:shadow-purple-500/20">
-                <Code2 className="h-6 w-6 text-purple-400" />
+              <div className="bg-background/80 backdrop-blur-sm border border-purple-500/20 rounded-xl px-4 py-3 shadow-[0_0_18px_rgba(168,85,247,0.16)] transition-all hover:shadow-[0_0_28px_rgba(168,85,247,0.32)]">
+                {/* A different speed keeps the two badges from syncing. */}
+                <span className="animate-icon-spin" style={{ animationDuration: "14s" }}>
+                  <Code2 className="h-6 w-6 text-purple-400" />
+                </span>
               </div>
             </div>
           </div>

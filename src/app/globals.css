@@ -235,6 +235,54 @@
   animation: scroll-indicator 1.5s ease-in-out infinite;
 }
 
+/* Continuous 360° rotation for decorative icons */
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-icon-spin {
+  display: inline-flex;
+  animation: icon-spin 12s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Two circular orbit rings - icons revolve around the center and stay upright */
+@keyframes orbit-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-orbit-cw {
+  animation: orbit-cw 45s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-orbit-ccw {
+  animation: orbit-ccw 32s linear infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
@@ -244,7 +292,10 @@
   .animate-slide-up-fade,
   .animate-border-glow,
   .animate-bounce-slow,
-  .animate-scroll-indicator {
+  .animate-scroll-indicator,
+  .animate-icon-spin,
+  .animate-orbit-cw,
+  .animate-orbit-ccw {
     animation: none !important;
     opacity: 1;
   }
