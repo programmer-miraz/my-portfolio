@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code2, Link, Mail, User } from "lucide-react";
+import { ArrowRight, Code2, FileUser, Mail, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 /**
  * FloatingBlob Component
@@ -127,9 +128,9 @@ export function Hero() {
 
       {/* Main Content Container */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Side - Text Content */}
-          <div className="text-center lg:text-left">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-x-16 lg:gap-y-0 items-center">
+          {/* Top: Greeting, Heading, Title */}
+          <div className="order-1 text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:text-left">
 
 
             {/* Greeting Text */}
@@ -157,9 +158,57 @@ export function Hero() {
                 Learning Full-Stack Web Developer
               </p>
             </div>
+          </div>
+
+          {/* Right Side - Profile Image (middle on mobile, right on desktop) */}
+          <div className="order-2 relative flex justify-center mx-auto max-w-[280px] sm:max-w-[340px] lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:max-w-[550px] w-[480px] lg:justify-end animate-slide-up-fade" style={{ animationDelay: "300ms" }}>
+            {/* Decorative Ring Background - Enhanced with gradients */}
+            <div className="relative flex w-full items-center justify-center pointer-events-none lg:absolute lg:inset-0" aria-hidden="true">
+              {/* Inner subtle ring */}
+
+              <div className=" rounded-full  justify-center font-medium p-2
+                bg-gradient-to-r from-blue-500 via-purple-500 to-pink-300
+                text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50
+                transition-all duration-300">
+
+
+                <Image
+                  src="/img/my-pic.jpeg"
+                  alt="Md. Miraz - Full Stack Developer"
+                  width={350}
+                  height={250}
+
+                  className="object-contain  rounded-full max-w-full"
+
+                />
+
+              </div>
+            </div>
+
+            {/* Floating Tech Badges - Enhanced */}
+            <div className="absolute -bottom-4 left-0 animate-float-slow sm:-bottom-6 sm:-left-6" style={{ animationDelay: "1s", animationDuration: "4s" }} aria-hidden="true">
+              <div className="bg-background/80 backdrop-blur-sm border border-blue-500/20 rounded-xl px-4 py-3 shadow-[0_0_18px_rgba(59,130,246,0.18)] transition-all hover:shadow-[0_0_28px_rgba(59,130,246,0.32)]">
+                {/* Only the decorative icon spins, not the badge card. */}
+                <span className="animate-icon-spin" style={{ animationDuration: "10s" }}>
+                  <Code2 className="h-6 w-6 text-blue-400" />
+                </span>
+              </div>
+            </div>
+            <div className="absolute -bottom-4 right-0 animate-float-slow sm:-bottom-6 sm:-right-6" style={{ animationDelay: "2s", animationDuration: "4.5s" }} aria-hidden="true">
+              <div className="bg-background/80 backdrop-blur-sm border border-purple-500/20 rounded-xl px-4 py-3 shadow-[0_0_18px_rgba(168,85,247,0.16)] transition-all hover:shadow-[0_0_28px_rgba(168,85,247,0.32)]">
+                {/* A different speed keeps the two badges from syncing. */}
+                <span className="animate-icon-spin" style={{ animationDuration: "14s" }}>
+                  <Code2 className="h-6 w-6 text-purple-400" />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom: Description, Buttons, Social */}
+          <div className="order-3 text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:text-left">
 
             {/* Description */}
-            <div className="mt-6 animate-slide-up-fade" style={{ animationDelay: "400ms" }}>
+            <div className="mt-0 animate-slide-up-fade lg:mt-6" style={{ animationDelay: "400ms" }}>
               <p className="text-base sm:text-lg text-foreground/70 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 I build modern, responsive and user-friendly web experiences with
                 <span className="font-medium text-blue-400">Next.js</span> and
@@ -168,16 +217,19 @@ export function Hero() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up-fade" style={{ animationDelay: "500ms" }}>
-              <Button
-                className="group w-full cursor-pointer sm:w-auto bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 px-7 py-5"
+            <div className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 sm:mt-10 sm:gap-4 lg:justify-start animate-slide-up-fade" style={{ animationDelay: "500ms" }}>
+              <Link
+                href="https://docs.google.com/document/d/1geFVhC4kQ_lZaxpM7L_qcbBtUn9B-6C3_8OffsKcH0M/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-lg border border-blue-400/20 bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:-translate-y-[1px] hover:from-blue-600 hover:to-purple-600 hover:shadow-xl hover:shadow-purple-500/30 active:scale-95 sm:px-4.5 sm:py-2.5"
               >
-                View Projects
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Button>
+                <FileUser className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                View Resume
+              </Link>
               <Button
                 variant="outline"
-                className="w-full sm:w-auto border-border/50 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400 transition-all cursor-pointer duration-300 px-8 py-5"
+                className="sm:w-auto border-blue-500 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-blue-400 transition-all cursor-pointer duration-300 px-6 py-4 sm:px-8 sm:py-5"
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Mail className="mr-2 h-5 w-4" aria-hidden="true" />
@@ -187,99 +239,28 @@ export function Hero() {
 
             {/* Social Links */}
             <div className="mt-12 flex items-center justify-center lg:justify-start gap-6 animate-slide-up-fade" style={{ animationDelay: "600ms" }}>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/50 hover:text-blue-400 transition-colors duration-300"
-                aria-label="GitHub"
-              >
-                <Link className="h-5 w-5" />
-              </a>
-              <a
+              <Link
                 href="https://linkedin.com"
                 target="_blank"
-                rel="noopener noreferrer"
                 className="text-foreground/50 hover:text-blue-400 transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <User className="h-5 w-5" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href="mailto:hello@example.com"
                 className="text-foreground/50 hover:text-purple-400 transition-colors duration-300"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/50 hover:text-pink-400 transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <Code2 className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Right Side - Profile Image - Enhanced as main visual focus */}
-          <div className="relative flex justify-center lg:justify-end animate-slide-up-fade" style={{ animationDelay: "300ms" }}>
-            {/* Decorative Ring Background - Enhanced with gradients */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-              {/* Outer rotating ring with gradient */}
-              {/* <div className="w-[400px] h-[400px] rounded-full border-2 border-transparent bg-gradient-to-r from-blue-500/40 to-purple-500/40 animate-spin-slow" style={{ mask: "linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff)", WebkitMask: "linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff)", borderWidth: "2px" }} /> */}
-              {/* Middle ring - reverse rotation
-              <div className="w-[300] h-[300px] rounded-full border border-purple-500/20 animate-spin-reverse" /> */}
-              {/* Inner subtle ring */}
-            
-            <div className=" rounded-full justify-center font-medium p-2
-                bg-gradient-to-r from-blue-500 via-purple-500 to-pink-300
-                text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50
-                transition-all duration-300">
-          
-
-                <Image
-                  src="/img/my-pic.jpeg"
-                  alt="Md. Miraz - Full Stack Developer"
-                  width={380}
-                  height={280}
-
-                  className="object-contain rounded-full"
-
-                />
-             
-            </div>
-            {/* <div className="w-[300px] h-[300px] rounded-full border border-blue-500/15 animate-spin-slow" style={{ animationDuration: "40s" }} />  */}
-            </div>
-
-            {/* {/* Profile Image with Enhanced Gradient Border - Main Visual Focus   */}
-
-
-            {/* Floating Tech Badges - Enhanced */}
-            <div className="absolute -bottom-6 -left-6 animate-float-slow" style={{ animationDelay: "1s", animationDuration: "4s" }} aria-hidden="true">
-              <div className="bg-background/80 backdrop-blur-sm border border-blue-500/20 rounded-xl px-4 py-3 shadow-[0_0_18px_rgba(59,130,246,0.18)] transition-all hover:shadow-[0_0_28px_rgba(59,130,246,0.32)]">
-                {/* Only the decorative icon spins, not the badge card. */}
-                <span className="animate-icon-spin" style={{ animationDuration: "10s" }}>
-                  <Code2 className="h-6 w-6 text-blue-400" />
-                </span>
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -right-6 animate-float-slow" style={{ animationDelay: "2s", animationDuration: "4.5s" }} aria-hidden="true">
-              <div className="bg-background/80 backdrop-blur-sm border border-purple-500/20 rounded-xl px-4 py-3 shadow-[0_0_18px_rgba(168,85,247,0.16)] transition-all hover:shadow-[0_0_28px_rgba(168,85,247,0.32)]">
-                {/* A different speed keeps the two badges from syncing. */}
-                <span className="animate-icon-spin" style={{ animationDuration: "14s" }}>
-                  <Code2 className="h-6 w-6 text-purple-400" />
-                </span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-     
-        
+
+
       </div>
     </section>
   );

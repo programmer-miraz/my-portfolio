@@ -4,6 +4,10 @@ import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
 import ContactSection from "@/components/Contact";
+import Footer from "@/components/footer";
+
+
+
 
 
 
@@ -17,7 +21,8 @@ export default function Home() {
         <Skills />
         <Projects />
         <ContactSection />
-        
+        <Footer></Footer>
+
       </main>
     </>
   );

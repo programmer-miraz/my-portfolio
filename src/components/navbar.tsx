@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Code2, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -27,7 +27,7 @@ export function Navbar() {
       setIsScrolled(scrollY > 20);
 
       // Determine active section based on scroll position
-      const sections = ["home", "about", "skills", "projects", "contact"];
+      const sections = ["home", "about-me", "skills", "projects", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -50,7 +50,7 @@ export function Navbar() {
   // Navigation links with section IDs for smooth scrolling
   const navLinks = [
     { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
+    { label: "About", href: "#about-me" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
@@ -91,14 +91,15 @@ export function Navbar() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-15 lg:h-15">
           {/* Logo - More prominent with subtle glow */}
           <Link
             href="#home"
-            className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgb(139,92,246/0.4)]"
+            className="text-2xl flex items-center gap-2 font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgb(139,92,246/0.4)]"
             aria-label="Go to homepage"
             onClick={(e) => handleSmoothScroll(e, "#home")}
           >
+                <Code2 className="my-1 h-6 w-6 text-blue-300 sm:h-7 sm:w-7" />
             MIRAZ.
           </Link>
 
@@ -150,7 +151,7 @@ export function Navbar() {
                 "hover:from-blue-600 hover:via-purple-600 hover:to-pink-600",
                 "text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50",
                 "transition-all duration-300",
-                "relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-400 before:via-purple-400 before:to-pink-400 before:opacity-0 before:transition-opacity hover:before:opacity-20"
+                "relative overflow-hidden before:absolute cursor-pointer before:inset-0 before:bg-gradient-to-r before:from-blue-400 before:via-purple-400 before:to-pink-400 before:opacity-0 before:transition-opacity hover:before:opacity-20"
               )}
               onClick={(e) => handleSmoothScroll(e, "#contact")}
             >
@@ -223,7 +224,7 @@ export function Navbar() {
                 "w-full justify-center font-medium px-6 py-3 mt-2",
                 "bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500",
                 "hover:from-blue-600 hover:via-purple-600 hover:to-pink-600",
-                "text-white shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50",
+                "text-white shadow-lg shadow-blue-500/30 cursor-pointer hover:shadow-blue-500/50",
                 "transition-all duration-300"
               )}
               onClick={(e) => handleSmoothScroll(e, "#contact")}

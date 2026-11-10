@@ -43,7 +43,7 @@ export function About() {
     <section
       id="about-me"
       ref={sectionRef}
-      className="relative w-full bg-background py-14 sm:py-15 lg:py-15"
+      className="relative w-full bg-background py-16 sm:py-18 lg:py-18 mt-4"
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
         {/* ---------- BADGE ---------- */}

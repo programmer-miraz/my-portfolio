@@ -29,33 +29,12 @@ type Project = {
   title: string;
   description: string;
   technologies: string[];
-  /**
-   * Leave this empty until you have a real screenshot inside /public.
-   * Example: "/projects/studios-space.png"
-   */
   image: string;
-  /**
-   * Leave these empty until you have the real links.
-   * The buttons stay disabled while a URL is empty.
-   */
   liveUrl: string;
   repoUrl: string;
-  /**
-   * Icon shown in the preview area while `image` is empty.
-   * This is only a visual placeholder, not a generated screenshot.
-   */
   previewIcon: ComponentType<{ className?: string }>;
 };
 
-/**
- * Edit this array to update the section.
- *
- * Screenshot: put your image inside /public (for example
- * /public/projects/studios-space.png) and use "/projects/studios-space.png".
- *
- * Links: paste the real URLs below. Each button automatically becomes
- * clickable as soon as its URL is filled in.
- */
 const projects: Project[] = [
   {
     title: "StudioSpace",
@@ -68,47 +47,47 @@ const projects: Project[] = [
       "Express.js",
       "MongoDB",
     ],
-    image: "", // Add the real screenshot path here.
-    liveUrl: "", // Add the real live demo URL here.
-    repoUrl: "", // Add the real repository URL here.
+    image: "/img/StudioSpace Creative Studio .png", // Add the real screenshot path here.
+    liveUrl: "https://studio-space-woad-eight.vercel.app", // Add the real live demo URL here.
+    repoUrl: "https://github.com/programmer-miraz/Studio-Space-server", // Add the real repository URL here.
     previewIcon: Clapperboard,
   },
-  {
-    title: "BazarDor",
-    description:
-      "A bazar price management web application that helps users explore and manage product prices.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "MongoDB",
-      "Better Auth",
-    ],
-    image: "", // Add the real screenshot path here.
-    liveUrl: "", // Add the real live demo URL here.
-    repoUrl: "", // Add the real repository URL here.
-    previewIcon: ShoppingBag,
-  },
-  {
-    title: "BikeZone",
-    description:
-      "A modern bike-related web application with a clean and user-friendly interface.",
-    technologies: ["Next.js", "React.js", "Tailwind CSS", "MongoDB"],
-    image: "", // Add the real screenshot path here.
-    liveUrl: "", // Add the real live demo URL here.
-    repoUrl: "", // Add the real repository URL here.
-    previewIcon: Bike,
-  },
-  {
-    title: "FitLog",
-    description:
-      "A fitness tracking application where users can explore exercises, view details, and manage workout activities.",
-    technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
-    image: "", // Add the real screenshot path here.
-    liveUrl: "", // Add the real live demo URL here.
-    repoUrl: "", // Add the real repository URL here.
-    previewIcon: Activity,
-  },
+  // {
+  //   title: "BazarDor",
+  //   description:
+  //     "A bazar price management web application that helps users explore and manage product prices.",
+  //   technologies: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "MongoDB",
+  //     "Better Auth",
+  //   ],
+  //   image: "", // Add the real screenshot path here.
+  //   liveUrl: "", // Add the real live demo URL here.
+  //   repoUrl: "", // Add the real repository URL here.
+  //   previewIcon: ShoppingBag,
+  // },
+  // {
+  //   title: "BikeZone",
+  //   description:
+  //     "A modern bike-related web application with a clean and user-friendly interface.",
+  //   technologies: ["Next.js", "React.js", "Tailwind CSS", "MongoDB"],
+  //   image: "", // Add the real screenshot path here.
+  //   liveUrl: "", // Add the real live demo URL here.
+  //   repoUrl: "", // Add the real repository URL here.
+  //   previewIcon: Bike,
+  // },
+  // {
+  //   title: "FitLog",
+  //   description:
+  //     "A fitness tracking application where users can explore exercises, view details, and manage workout activities.",
+  //   technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
+  //   image: "", // Add the real screenshot path here.
+  //   liveUrl: "", // Add the real live demo URL here.
+  //   repoUrl: "", // Add the real repository URL here.
+  //   previewIcon: Activity,
+  // },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -221,7 +200,7 @@ export function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="relative w-full scroll-mt-20 overflow-hidden bg-background py-20 sm:py-24 lg:py-28"
+      className="relative w-full md:max-w-5xl md:mx-auto  scroll-mt-20 overflow-hidden bg-background py-20 sm:py-24 mt-15 lg:py-28"
     >
       {/* ---------- BACKGROUND GLOWS AND GRID ---------- */}
       <div
@@ -287,7 +266,7 @@ export function Projects() {
         </div>
 
         {/* ================= HORIZONTAL PROJECT LIST ================= */}
-        <div className="mt-10 grid gap-4 md:auto-rows-fr grid-cols-1 sm:grid-cols-2 lg:mt-12 lg:gap-5">
+        <div className="mt-10 grid gap-4 md:auto-rows-fr grid-cols-1 sm:grid-cols-2 md:grid-cols-1   lg:mt-12 lg:gap-5">
           {projects.map((project, index) => {
             const PreviewIcon = project.previewIcon;
             const projectNumber = String(index + 1).padStart(2, "0");
@@ -302,25 +281,25 @@ export function Projects() {
                 style={{ transitionDelay: `${250 + index * 90}ms` }}
               >
                 {/* Gradient border wrapper */}
-                <article className="group relative h-full overflow-hidden rounded-2xl bg-gradient-to-r from-blue-500/30 via-white/[0.07] to-purple-500/30 p-[1px] shadow-[0_12px_40px_-24px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-0.5 hover:from-blue-400/50 hover:via-cyan-400/20 hover:to-purple-400/50 hover:shadow-[0_18px_50px_-24px_rgba(59,130,246,0.4)]">
-                  <div className="relative  h-full flex-col gap-4 rounded-[15px] bg-[#080d16]/90 p-4 backdrop-blur-sm md:flex-row md:items-center md:gap-5 md:p-5">
+                <article className="group  relative h-full overflow-hidden rounded-2xl bg-gradient-to-r from-blue-500/30 via-white/[0.07] to-purple-500/30 p-[1px] shadow-[0_12px_40px_-24px_rgba(0,0,0,0.9)] transition-all duration-500 hover:-translate-y-0.5 hover:from-blue-400/50 hover:via-cyan-400/20 hover:to-purple-400/50 hover:shadow-[0_18px_50px_-24px_rgba(59,130,246,0.4)]">
+                  <div className="relative h-full overflow-hidden rounded-[15px] bg-[#080d16]/90 p-4 backdrop-blur-sm md:flex md:flex-row md:p-0">
                     {/* Soft glow revealed on hover */}
                     <div
                       className="pointer-events-none absolute -right-24 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-blue-500/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
                       aria-hidden="true"
                     />
 
-                    {/* ---------- SMALL PREVIEW (LEFT ON DESKTOP) ---------- */}
-                    <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/[0.08] via-[#0b1220] to-purple-500/[0.08] transition-colors duration-500 group-hover:border-blue-400/20 sm:h-32 md:h-[200px] ">
+                    {/* ---------- PREVIEW (FULL-HEIGHT LEFT PANEL ON MD+) ---------- */}
+                    <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/[0.08] via-[#0b1220] to-purple-500/[0.08] transition-colors  duration-500 sm:h-32 md:h-auto md:w-[42%] md:rounded-none md:border-0 lg:w-[45%]">
                       {project.image ? (
                         <Image
                           src={project.image}
                           alt={`${project.title} project preview`}
                           fill
-                          sizes="(min-width: 768px) 176px, 100vw"
+                          sizes="(min-width: 768px) 45vw, 100vw"
                           className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                         />
-                      ) : (<div className="flex h-52 items-center justify-center">
+                      ) : (<div className="flex h-full items-center justify-center">
                     
                           <span className="mb-4 inline-block rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-1 text-xs font-semibold tracking-widest text-teal-500">
                             COMING SOON
@@ -336,8 +315,8 @@ export function Projects() {
                       />
                     </div>
 
-                    {/* ---------- PROJECT DETAILS (MIDDLE) ---------- */}
-                    <div className="relative min-w-0 flex-1">
+                    {/* ---------- PROJECT DETAILS (RIGHT) ---------- */}
+                    <div className="relative min-w-0 flex-1 md:p-6 lg:p-7">
                       <div className="flex items-center gap-2.5">
                         <span className="inline-flex h-6 mt-3 min-w-6 items-center justify-center rounded-md border border-blue-400/20 bg-blue-500/[0.06] px-1.5 font-mono text-[10px] font-semibold tracking-[0.12em] text-blue-300/80">
                           {projectNumber}
@@ -353,10 +332,10 @@ export function Projects() {
 
                       <p className="mt-2 line-clamp-2 text-sm leading-5 text-zinc-400">
                         {project.description}
-                      </p>
+                      </p> 
 
                       {/* Technology badges */}
-                      <div className="mt-3 flex flex-wrap gap-1.5">
+                      <div className="mt-3 flex flex-wrap  gap-1.5">
                         {project.technologies.map((technology) => {
                           const meta =
                             technologyMeta[technology] ?? fallbackTechnology;
@@ -376,10 +355,8 @@ export function Projects() {
                           );
                         })}
                       </div>
-                    </div>
-
-                    {/* ---------- ACTIONS (RIGHT ON DESKTOP) ---------- */}
-                    <div className="relative mt-1 grid shrink-0 grid-cols-1 gap-3 md:mt-5 md:grid-cols-2 md:border-l md:border-white/5 md:px-2">
+                      {/* ---------- ACTIONS (BOTTOM, MD+) ---------- */}
+                      <div className="relative mt-1 grid grid-cols-1 gap-3 md:mt-6 md:grid-cols-[auto_auto] md:justify-start md:gap-3 md:border-t md:border-white/5 md:pt-5">
                       <ProjectAction
                         href={project.liveUrl}
                         label="Live Demo"
@@ -391,7 +368,8 @@ export function Projects() {
                         label="Repository"
                         Icon={GitBranch}
                       />
-                    </div>
+                      </div>
+                      </div>
                   </div>
                 </article>
               </div>

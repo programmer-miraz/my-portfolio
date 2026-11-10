@@ -21,20 +21,20 @@ import { toast } from "sonner";
 const contactInfo = [
     {
         label: "Email",
-        value: "your@email.com",
-        href: "mailto:your@email.com",
+        value: "programmar.miraz@gmail.com",
+        href: "mailto:programmar.miraz@email.com",
         icon: Mail,
     },
     {
         label: "GitHub",
-        value: "github.com/yourusername",
-        href: "https://github.com/yourusername",
-        icon: CodeXml,
+        value: "github.com/programmer-miraz",
+        href: "https://github.com/programmer-miraz",
+        icon: FaGithub,
     },
     {
         label: "LinkedIn",
-        value: "linkedin.com/in/yourusername",
-        href: "https://linkedin.com/in/yourusername",
+        value: "linkedin.com/in/md-miraz",
+        href: "https://linkedin.com/in/md-miraz-islam",
         icon: FaLinkedin,
     },
     {
@@ -85,7 +85,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="relative overflow-hidden bg-[#070B14] px-4 py-24 md:px-8"
+            className="relative overflow-hidden  px-4 py-24 md:px-8"
         >
             {/* Background Effects */}
             <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-blue-600/10 blur-[120px]" />
@@ -202,17 +202,17 @@ const Contact = () => {
 
                             <div className="flex gap-3">
                                 <Link
-                                    href="https://github.com/yourusername"
+                                    href="https://github.com/programmer-miraz"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="GitHub"
                                     className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all hover:border-blue-400/40 hover:bg-blue-500/10 hover:text-blue-400"
                                 >
-                                    <CodeXml className="h-5 w-5" />
+                                    <FaGithub className="h-5 w-5" />
                                 </Link>
 
                                 <Link
-                                    href="https://linkedin.com/in/yourusername"
+                                    href="https://linkedin.com/in/md-miraz-islam"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
@@ -222,7 +222,7 @@ const Contact = () => {
                                 </Link>
 
                                 <Link
-                                    href="mailto:your@email.com"
+                                    href="mailto:programmar.miraz@gmail.com"
                                     aria-label="Email"
                                     className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-zinc-400 transition-all hover:border-purple-400/40 hover:bg-purple-500/10 hover:text-purple-400"
                                 >
@@ -233,7 +233,7 @@ const Contact = () => {
                     </div>
 
                     {/* RIGHT SIDE - CONTACT FORM */}
-                    <div className="rounded-2xl border border-white/10 bg-[#0B1120]/80 p-6 shadow-2xl shadow-blue-950/10 backdrop-blur-xl md:p-8">
+                    <div className="rounded-2xl border mb-50 mt-12 border-white/10 bg-[#0B1120]/80 p-6 shadow-2xl shadow-blue-950/10 backdrop-blur-xl md:p-8">
 
                         <div className="mb-7">
                             <h3 className="text-2xl font-bold text-white">
