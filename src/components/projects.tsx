@@ -68,26 +68,17 @@ const projects: Project[] = [
   //   repoUrl: "", // Add the real repository URL here.
   //   previewIcon: ShoppingBag,
   // },
-  // {
-  //   title: "BikeZone",
-  //   description:
-  //     "A modern bike-related web application with a clean and user-friendly interface.",
-  //   technologies: ["Next.js", "React.js", "Tailwind CSS", "MongoDB"],
-  //   image: "", // Add the real screenshot path here.
-  //   liveUrl: "", // Add the real live demo URL here.
-  //   repoUrl: "", // Add the real repository URL here.
-  //   previewIcon: Bike,
-  // },
-  // {
-  //   title: "FitLog",
-  //   description:
-  //     "A fitness tracking application where users can explore exercises, view details, and manage workout activities.",
-  //   technologies: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
-  //   image: "", // Add the real screenshot path here.
-  //   liveUrl: "", // Add the real live demo URL here.
-  //   repoUrl: "", // Add the real repository URL here.
-  //   previewIcon: Activity,
-  // },
+  {
+    title: "BikeZone",
+    description:
+      "A modern bike-related web application with a clean and user-friendly interface.",
+    technologies: ["Next.js", "React.js", "Tailwind CSS", "MongoDB"],
+    image: "", // Add the real screenshot path here.
+    liveUrl: "", // Add the real live demo URL here.
+    repoUrl: "", // Add the real repository URL here.
+    previewIcon: Bike,
+  },
+
 ];
 
 /* ------------------------------------------------------------------ */
