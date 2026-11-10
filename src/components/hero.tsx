@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code2, FileUser, Mail, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { FaLinkedin } from "react-icons/fa";
 
 /**
  * FloatingBlob Component
@@ -245,7 +246,7 @@ export function Hero() {
                 className="text-foreground/50 hover:text-blue-400 transition-colors duration-300"
                 aria-label="LinkedIn"
               >
-                <User className="h-5 w-5" />
+                         <FaLinkedin className="h-5 w-5" />
               </Link>
               <Link
                 href="mailto:hello@example.com"

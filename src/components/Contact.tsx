@@ -317,7 +317,7 @@ const Contact = () => {
                             <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="h-12 w-full gap-2 bg-gradient-to-r from-blue-600 to-purple-600 font-semibold text-white transition-all hover:from-blue-500 hover:to-purple-500"
+                                className="h-12 cursor-pointer w-full gap-2 bg-gradient-to-r from-blue-600 to-purple-600 font-semibold text-white transition-all hover:from-blue-500 hover:to-purple-500"
                             >
                                 {isSubmitting ? (
                                     <>
